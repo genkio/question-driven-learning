@@ -11,15 +11,22 @@ Okay, before we dive into the framework source code, allow me to talk a bit abou
 OO in JavaScript
 ---
 screenshot#1
-
-Allow me to add one more drawing to hit these concepts home. (Thanks to Mr.Kyle Simpson's You Don't Know JS book series which helped me greatly to understand these)
+![screenshot#1](/screenshots/step.1.1.png)
 
 JavaScript function, object, prototype, constructor, __proto__ relationships illustrated
 ---
+Allow me to add one more drawing to hit these concepts home. (Thanks to Mr.Kyle Simpson's You Don't Know JS book series which helped me greatly to understand these)
+
 screenshot#2
 
+![screenshot#2](/screenshots/step.1.2.png)
+
 I think we’re ready to dive into the framework, see how the BaseObject get created, let’s start by setting a break point here:
+
 screenshot#3
+
+![screenshot#3](/screenshots/step.1.3.png)
+
 Before we step into the craeteClass method, let’s talk about how does SAPUI5 create a class from a high-level.
 
 The code above (between line 34,963 and 34972) is essentially this if we strip it down to the bare minimum:
@@ -47,22 +54,46 @@ What does createClass method offer?
 Alright, enough with the trailers, let’s step into the Metadata.createClass method and get the show started ! (screenshots below reflect the key points during framework code execution, with inline explanations / narrows)
 
 screenshot#4
+![screenshot#4](/screenshots/step.1.4.png)
+
 screenshot#5
+
+![screenshot#5](/screenshots/step.1.5.png)
+
 screenshot#6
+
+![screenshot#6](/screenshots/step.1.6.png)
+
 screenshot#7
+![screenshot#7](/screenshots/step.1.7.png)
+
 screenshot#8
+
+![screenshot#8](/screenshots/step.1.8.png)
+
 screenshot#9
+
+![screenshot#9](/screenshots/step.1.9.png)
+
 screenshot#10
+![screenshot#10](/screenshots/step.1.10.png)
+
 Create the metadata.
 
 There’s too much screenshots already, I won’t get into the create metadata in detail, but one thing interesting to look at during the metadata creation process, see how the prototype object get enriched with the classInfo object.
 
 How does prototype object get enriched?
 ---
+
 screenshot#11
+![screenshot#11](/screenshots/step.1.11.png)
+
 screenshot#12
+![screenshot#12](/screenshots/step.1.12.png)
 
 Just like that, a new class, called BaseObject get created, as you can see, next is that, methods (key value pairs, method name as the key, and function as the value) will be added on the BaseObject prototype object.
+
 screenshot#13
+![screenshot#13](/screenshots/step.1.13.png)
 
 The End.
