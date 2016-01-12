@@ -54,6 +54,7 @@ What does createClass method offer?
 Alright, enough with the trailers, let’s step into the Metadata.createClass method and get the show started ! (screenshots below reflect the key points during framework code execution, with inline explanations / narrows)
 
 screenshot#4
+
 ![screenshot#4](/screenshots/step.1.4.png)
 
 screenshot#5
@@ -76,6 +77,7 @@ screenshot#9
 ![screenshot#9](/screenshots/step.1.9.png)
 
 screenshot#10
+
 ![screenshot#10](/screenshots/step.1.10.png)
 
 Create the metadata.
