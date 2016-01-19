@@ -1,23 +1,17 @@
 > Welcome to my SAPUI5 Walkthrough, And Dive In blog series, where I’ll not only walkthrough the [tutorial](https://sapui5.hana.ondemand.com/sdk/#docs/guide/3da5f4be63264db99f2e5b04c5e853db.html), but dive in, to explore the magic behind SAPUI5. Buckle up and sit tight, it's gonna be a bumpy ride as I’m no expert in any way shape or form, just a humble learner who loves coding and likes to get to the bottom of things =。=
 
-> "You just do the programming and solve the problem.
-And then onto the next problem and solve that problem.
-And solve the next problem too.
-And if you solve enough problems, you get to go home."
-
-— The Martian
-
-I just came back watching the martian, this is one of my favourite lines in that movie, I did change the word ‘math’ to ‘programming’ here, I’d like to see a movie in which Matt Damon solves programming problems :D
-
 SAPUI5 uses AMD (Asynchronous Module Definition) format for its module definition and consumption, AMD format is to provide a solution for modular JavaScript that developers can use, you can find a lot of materials out there on this topic, let’s see how does it work in SAPUI5.
 
 This is the code introduced in step 6: modules of the walkthrough tutorial. The MessageToast module is the star of today’s show.
 
 [1]![screenshot#1](/screenshots/step.6.1.png)
 
-First let’s take a quick look at How does a module defined?, I removed all the methods except the show method of our MessageToast module, so that it can be fit into my screenshot below. We define a module, by calling sap.ui.define, the first parameter could be (1) the name of the module, when omitted, the loader determines the name from the request, that’s what we’re doing here. The rest of the parameters are (2) the array of dependencies and (3) the module factory function, and (4) the boolean depending on whether an export to global names is required.
+How does a module get defined?
+---
 
-In the factory function, we define a javascript object called MessageToast, ’show’ is one of the method / property added, it returns the MessageToast object in the end, that’s it.
+First let’s take a quick look at How does a module defined? I removed all the methods except the show method of our MessageToast module, so that it can be fit into the screenshot below. We define a module, by calling sap.ui.define, the first parameter could be (1) the name of the module, when omitted, the loader determines the name from the request, that’s what we’re doing here. The rest of the parameters are (2) the array of dependencies and (3) the module factory function, and (4) the boolean depending on whether an export to global names is required.
+
+In the factory function, we define a javascript object called MessageToast, `.show` is one of the method / property added, it returns the MessageToast object in the end, that’s it.
 
 `sap/m/MessageToast.js`
 
@@ -25,10 +19,14 @@ In the factory function, we define a javascript object called MessageToast, ’s
 
 Alright, with what’s our MessageToast module looks like in mind, let’s starting debugging, to reveal these mysteries:
 
-- How does a module required?
-- How does a module loaded?
-- How many states a module could have?
-- How does a module made available to global name space?
+- [How does a module get consumed?](#how-does-a-module-get-consumed)
+- [What are the module states available?](#what-are-the-module-states-available)
+- [How does a module get loaded?](#how-does-a-module-get-loaded)
+- [How does a module get executed?](#how-does-a-module-get-executed)
+- [How does a module get made available to global name space?](#how-does-a-module-get-made-available-to-global-name-space)
+
+How does a module get consumed?
+---
 
 In our example code, the MessageToast module is consumed as one of the dependencies of the App.controller.js.
 
@@ -46,9 +44,12 @@ requireModule looks for MessageToast in the global mModules map, if it does not 
 
 [6]![screenshot#6](/screenshots/step.6.6.png)
 
-Before we go any further, let’s take a look at how many states a module could have, this would give us a good picture of what’s next to come.
+What are the module states available?
+---
 
-```
+Before we go any further, let’s take a look at what are the module states available, this would give us a good picture of what’s next to come.
+
+```javascript
 INITIAL = 0, // Module neither has been required nor preloaded not declared, but someone asked for it.
 PRELOADED = -1, // Module has been preloaded, but not required or declared
 LOADING = 1, // Module has been declared.
@@ -57,6 +58,9 @@ EXECUTING = 3, // Module is currently being executed
 READY = 4, // Module has been loaded and executed without errors.
 FAILED = 5, // Module either could not be loaded or execution threw an error
 ```
+
+How does a module get loaded?
+---
 
 Next, we set module state to LOADING, then, a sync ajax request action is performed, MessageToast.js is retrieved and its content is set to the data property of the oModule object, and also, the module state is now set to LOADED.
 
@@ -67,6 +71,9 @@ One of the advantages of AMD format is that modules can be loaded asynchronously
 With module loaded, the execModule method is called to execute module.
 
 [8]![screenshot#8](/screenshots/step.6.8.png)
+
+How does a module get executed?
+---
 
 We first set module state to EXECUTING, then calls window.eval on the module data.
 
@@ -88,6 +95,9 @@ Next, we’ll be exporting our module to the global name space cause we passed i
 
 [13]![screenshot#13](/screenshots/step.6.13.png)
 
+How does a module get made available to global name space?
+---
+
 jQuery.sap.setObject method is called to do the exporting.
 
 [14]![screenshot#14](/screenshots/step.6.14.png)
@@ -100,7 +110,7 @@ Lastly, we set module state to READY, and clear out the data property.
 
 [16]![screenshot#16](/screenshots/step.6.16.png)
 
-Then, we come back, the MessageToast and all its methods, .show included are made available to us.
+Then, we come back, the MessageToast and all its methods, `.show` included are made available to us.
 
 [17]![screenshot#17](/screenshots/step.6.17.png)
 
