@@ -18,3 +18,5 @@ This repository shares some of my findings while studying SAPUI5 / [OpenUI5](htt
 		- [How does a module get loaded?](walkthrough-dive-in/step6.md#how-does-a-module-get-loaded)
 		- [How does a module get executed?](walkthrough-dive-in/step6.md#how-does-a-module-get-executed)
 		- [How does a module get made available to global name space?](walkthrough-dive-in/step6.md#how-does-a-module-get-made-available-to-global-name-space)
+- How does X work series
+	- [How does bindAggregation work?](screenshots/how-does-bindAggregation-work.png)
