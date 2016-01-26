@@ -2,9 +2,9 @@
 
 This time, we’ll dive in to find out how a UI5 control (sap.m.Text) is created, let's talk the steps involved from a very high-level:
 
-1. [How does a control module get requested, loaded and executed?](#)
-2. [How does a control object get created?](#)
-3. [How does a control get rendered?](#)
+1. [How does a control module get requested, loaded and executed?](#how-does-a-control-module-get-requested-loaded-and-executed)
+2. [How does a control object get created?](#how-does-a-control-object-get-created)
+3. [How does a control object get turned into HTML?](#how-does-a-control-object-get-turned-into-html)
 
 Break point, checked, alright, let’s dive in!
 [1]![screenshot#1](/screenshots/step.3.1.png)
@@ -12,7 +12,7 @@ Break point, checked, alright, let’s dive in!
 How does a control module get requested, loaded and executed?
 ---
 
-First, we’ll need to require the sap.m.Text module. We talked about how does modules work in detail in [step 6](step6.md), we'll revisit the process here. I highly recommend you to read the other [post](step6.md) if you find the autopsy here is a bit confusing.
+First, we’ll need to require the sap.m.Text module. We talked about how does modules work in detail in [step 6](step6.md), we'll revisit the process here. I recommend you to read the other [post](step6.md) if you ever find the autopsy here is a bit confusing.
 [2]![screenshot#2](/screenshots/step.3.2.png)
 
 jQuery.sap.require leads to requireModule.
@@ -59,10 +59,23 @@ After registration, we’ll have settings ({text: “Hello World”} in our case
 
 Which is essentially to call the setText method on “Hello World”.
 [16]![screenshot#16](/screenshots/step.3.16.png)
-[17]![screenshot#17](/screenshots/step.3.17.png)
 
-With that, the shell object oInstance is now filled with our Text control properties, and returned.
+With that, the shell object oInstance is now filled with our Text control properties, and returned. That's all good, but the browser knows only how to render HTML not JavaScript object, what the framework gonna do about it?
 [18]![screenshot#18](/screenshots/step.3.18.png)
 
-How does a control get rendered?
+How does a control object get turned into HTML?
 ---
+
+Once the document is ready, renderPendingUIUpdates will be one of the tasks to be finished.
+[19]![screenshot#19](/screenshots/step.3.19.png)
+
+Who knows how to render our Text control? The framework will get the answer from the control metadata.
+[20]![screenshot#20](/screenshots/step.3.20.png)
+
+Then the renderer sap.m.TextRenderer module will be loaded, same old, same old. After that, the render method will be called upon it, with our Text control passed in as its parameter.
+[21]![screenshot#21](/screenshots/step.3.21.png)
+
+Lastly, if you take a look at what happen within the render method, you'll see the familiar HTML elements being added to construct the HTML representation of the Text control, that's what will be rendered by the browser.
+[22]![screenshot#22](/screenshots/step.3.22.png)
+
+The End.
