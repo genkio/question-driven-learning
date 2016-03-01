@@ -7,6 +7,7 @@ This time, we’ll dive in to find out how a UI5 control (sap.m.Text) is created
 3. [How does a control object get turned into HTML?](#how-does-a-control-object-get-turned-into-html)
 
 Break point, checked, alright, let’s dive in!
+
 [1]![screenshot#1](/screenshots/step.3.1.png)
 
 How does a control module get requested, loaded and executed?
@@ -16,6 +17,7 @@ First, we’ll need to require the sap.m.Text module. We talked about how does m
 [2]![screenshot#2](/screenshots/step.3.2.png)
 
 jQuery.sap.require leads to requireModule.
+
 [3]![screenshot#3](/screenshots/step.3.3.png)
 
 A sync ajax request loads the content of Text-dbg.js, sets it to module.data, and also, sets module.state to LOADED.
