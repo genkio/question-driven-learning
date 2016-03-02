@@ -2,13 +2,36 @@
 
 This time, we’ll dive in to find out how a UI5 control (sap.m.Text) is created, let's talk the steps involved from a very high-level:
 
+1. [How does lazy require work?](#how-does-lazy-require-work)
 1. [How does a control module get requested, loaded and executed?](#how-does-a-control-module-get-requested-loaded-and-executed)
-2. [How does a control object get created?](#how-does-a-control-object-get-created)
-3. [How does a control object get turned into HTML?](#how-does-a-control-object-get-turned-into-html)
+1. [How does a control object get created?](#how-does-a-control-object-get-created)
+1. [How does a control object get turned into HTML?](#how-does-a-control-object-get-turned-into-html)
 
-Break point, checked, alright, let’s dive in!
+Break point, checked, alright!
 
 [1]![screenshot#1](/screenshots/step.3.1.png)
+
+Before dive into the code, let’s take a quick look at the network tab of the Chrome developer tool, the sap.m.Text module has not yet been loaded, if the module is not there at this moment, how can we create a new instance out of it? (the screenshot number is out of order here, because this section was added after the post published)
+[23]![screenshot#23](/screenshots/step.3.23.png)
+
+Yet let's ask a different question, once we click the ’step into’ button in the Chrome developer tool, we get taken to line 27,166, the dummy constructor inside of the lazyRequire method, which loads the class on demand, at what point this dummy constructor get attached to our sap.m.Text class? And what's the deal with lazy require?
+[24]![screenshot#24](/screenshots/step.3.24.png)
+
+In order to answer that, let’s take a step back, back to the page initial loading time, that’s when the loadLibrary method called, remember the ‘data-sap-ui-libs=“sap.m”’ we put in the index.html bootstrap? This is when the sap.m library get loaded.
+[25]![screenshot#25](/screenshots/step.3.25.png)
+
+Let’s take a look at what’s inside of the sap.m.library.js, we see all the sap.m controls put in a array in a object passed to the initLibrary method. With what we learned in [step 6](step6.md), we know that this method will be called later when the module get executed.
+[26]![screenshot#26](/screenshots/step.3.26.png)
+
+When it's called, it then calls the lazyRequire method.
+
+[27]![screenshot#27](/screenshots/step.3.27.png)
+
+Which attaches a dummy constructor for the sap.m.Text class, the dummy constructor method will be called when we try to create a new instance of the class.
+
+[28]![screenshot#28](/screenshots/step.3.28.png)
+
+Alright, with that out of the way, let's continue with `jQuery.sap.require("sap.m.Text")`
 
 How does a control module get requested, loaded and executed?
 ---
