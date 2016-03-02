@@ -11,6 +11,9 @@ Break point, checked, alright!
 
 [1]![screenshot#1](/screenshots/step.3.1.png)
 
+How does lazy require work?
+---
+
 Before dive into the code, let’s take a quick look at the network tab of the Chrome developer tool, the sap.m.Text module has not yet been loaded, if the module is not there at this moment, how can we create a new instance out of it? (the screenshot number is out of order here, because this section was added after the post published)
 [23]![screenshot#23](/screenshots/step.3.23.png)
 
