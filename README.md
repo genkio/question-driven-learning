@@ -23,5 +23,9 @@ This repository shares some of my findings while studying SAPUI5 / [OpenUI5](htt
 		- [How does a module get loaded?](walkthrough-dive-in/step6.md#how-does-a-module-get-loaded)
 		- [How does a module get executed?](walkthrough-dive-in/step6.md#how-does-a-module-get-executed)
 		- [How does a module get made available to global name space?](walkthrough-dive-in/step6.md#how-does-a-module-get-made-available-to-global-name-space)
+	- [Step 8](https://sapui5.hana.ondemand.com/sdk/#docs/guide/df86bfbeab0645e5b764ffa488ed57dc.html): Translatable Texts. [How does i18n work?](walkthrough-dive-in/step8.md)
+		- [How does UI5 pick up the browser language setting?](walkthrough-dive-in/step8.md#how-does-ui5-pick-up-the-browser-language-setting)
+		- [How does the i18n files get loaded?](walkthrough-dive-in/step8.md#how-does-the-i18n-files-get-loaded)
+		- [How does the parameters get evaluated?](walkthrough-dive-in/step8.md#how-does-the-parameters-get-evaluated)
 - How does X work series
 	- [How does bindAggregation work?](screenshots/how-does-bindAggregation-work.png)

@@ -17,11 +17,12 @@ We see german on the screen, yeah.
 
 Here comes the questions:
 
-(1) How does SAPUI5 pick up the browser language setting.
-(2) How does SAPUI5 know which i18n file to load.
-(3) How does {0} turn into ‘World’.
+1. [How does UI5 pick up the browser language setting?](#how-does-ui5-pick-up-the-browser-language-setting)
+1. [How does the i18n files get loaded?](#how-does-the-i18n-files-get-loaded)
+1. [How does the parameters get evaluated?](#how-does-the-parameters-get-evaluated)
 
-(1) How does SAPUI5 pick up the browser language setting.
+How does UI5 pick up the browser language setting?
+---
 
 During the Core class instantiation process, a new Configuration object will be created.
 
@@ -30,7 +31,8 @@ During the Core class instantiation process, a new Configuration object will be 
 The configuration object will pick up our Browser language settings, and make the first entry (de) as the default language value.
 [5]![screenshot#5](/screenshots/step.8.5.png)
 
-(2) How does SAPUI5 know which i18n file to load.
+How does the i18n files get loaded?
+---
 
 We go back to the App.controller.js to instantiate an i18nModel object.
 
@@ -46,7 +48,8 @@ Having the resource loaded.
 
 [9]![screenshot#9](/screenshots/step.8.9.png)
 
-(3) How does {0} turn into ‘World’.
+How does the parameters get evaluated?
+---
 
 Start with getText method call.
 
