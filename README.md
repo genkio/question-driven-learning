@@ -30,3 +30,5 @@ This repository shares some of my findings while studying SAPUI5 / [OpenUI5](htt
 		- [How does the parameters get evaluated?](walkthrough-dive-in/step8.md#how-does-the-parameters-get-evaluated)
 - How does X work series
 	- [How does bindAggregation work?](screenshots/how-does-bindAggregation-work.png)
+
+> The rest of this serials (un-revised edition) can be found [here](http://scn.sap.com/people/ji.wu/content)
