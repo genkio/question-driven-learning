@@ -5,6 +5,7 @@ This repository shares some of my findings while studying SAPUI5 / [OpenUI5](htt
 
 ### Table of Contents
 
+- [Build a JavaScript front-end MVC framework in 30 lines of code ](https://github.com/j1wu/openui5-source-code-study/blob/master/build-a-javascript-front-end-mvc-framework-in-30-lines-of-code.md)
 - SAPUI5 walkthrough and dive in series *([tutorial](https://sapui5.hana.ondemand.com/sdk/#docs/guide/3da5f4be63264db99f2e5b04c5e853db.html) source code can be found [here](https://github.com/j1wu/sapui5-walkthrough))*
 	- [Step 1](https://sapui5.netweaver.ondemand.com/sdk/docs/guide/2680aa9b16c14a00b01261d04babbb39.html): Hello World! [Where it all began](walkthrough-dive-in/step1.md)
 		- [OO in JavaScript](walkthrough-dive-in/step1.md#oo-in-javascript)
