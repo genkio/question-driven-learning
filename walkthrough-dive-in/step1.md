@@ -1,4 +1,4 @@
-> Welcome to my SAPUI5 Walkthrough, And Dive In blog series, where I’ll not only walkthrough the [tutorial](https://sapui5.hana.ondemand.com/sdk/#docs/guide/3da5f4be63264db99f2e5b04c5e853db.html), but dive in, to explore the magic behind SAPUI5. Buckle up and sit tight, it's gonna be a bumpy ride as I’m no expert in any way shape or form, just a humble learner who loves coding and likes to get to the bottom of things =。= 
+> Welcome to my SAPUI5 Walkthrough, And Dive In blog series, where I’ll not only walkthrough the [tutorial](https://sapui5.hana.ondemand.com/sdk/#docs/guide/3da5f4be63264db99f2e5b04c5e853db.html), but dive in, to explore the magic behind SAPUI5. Buckle up and sit tight, it's gonna be a bumpy ride as I’m no expert in any way shape or form, just a humble learner who loves coding and likes to get to the bottom of things =。=
 
 Happy new year everyone !
 
@@ -10,17 +10,17 @@ Okay, before we dive into the framework source code, allow me to talk a bit abou
 
 OO in JavaScript
 ---
-[1]![screenshot#1](/screenshots/step.1.1.png)
+[1]![screenshot#1](/walkthrough-dive-in-screens/step.1.1.png)
 
 JavaScript function, object, prototype, constructor, __proto__ relationships illustrated
 ---
 Allow me to add one more drawing to hit these concepts home. (Thanks to Mr.Kyle Simpson's You Don't Know JS book series which helped me greatly to understand these)
 
-[2]![screenshot#2](/screenshots/step.1.2.png)
+[2]![screenshot#2](/walkthrough-dive-in-screens/step.1.2.png)
 
 I think we’re ready to dive into the framework, see how the BaseObject get created, let’s start by setting a break point here:
 
-[3]![screenshot#3](/screenshots/step.1.3.png)
+[3]![screenshot#3](/walkthrough-dive-in-screens/step.1.3.png)
 
 Before we step into the craeteClass method, let’s talk about how does SAPUI5 create a class from a high-level.
 
@@ -48,19 +48,19 @@ What does createClass method offer?
 
 Alright, enough with the trailers, let’s step into the Metadata.createClass method and get the show started ! (screenshots below reflect the key points during framework code execution, with inline explanations / narrows)
 
-[4]![screenshot#4](/screenshots/step.1.4.png)
+[4]![screenshot#4](/walkthrough-dive-in-screens/step.1.4.png)
 
-[5]![screenshot#5](/screenshots/step.1.5.png)
+[5]![screenshot#5](/walkthrough-dive-in-screens/step.1.5.png)
 
-[6]![screenshot#6](/screenshots/step.1.6.png)
+[6]![screenshot#6](/walkthrough-dive-in-screens/step.1.6.png)
 
-[7]![screenshot#7](/screenshots/step.1.7.png)
+[7]![screenshot#7](/walkthrough-dive-in-screens/step.1.7.png)
 
-[8]![screenshot#8](/screenshots/step.1.8.png)
+[8]![screenshot#8](/walkthrough-dive-in-screens/step.1.8.png)
 
-[9]![screenshot#9](/screenshots/step.1.9.png)
+[9]![screenshot#9](/walkthrough-dive-in-screens/step.1.9.png)
 
-[10]![screenshot#10](/screenshots/step.1.10.png)
+[10]![screenshot#10](/walkthrough-dive-in-screens/step.1.10.png)
 
 Create the metadata.
 
@@ -69,12 +69,12 @@ There’s too much screenshots already, I won’t get into the create metadata i
 How does prototype object get enriched?
 ---
 
-[11]![screenshot#11](/screenshots/step.1.11.png)
+[11]![screenshot#11](/walkthrough-dive-in-screens/step.1.11.png)
 
-[12]![screenshot#12](/screenshots/step.1.12.png)
+[12]![screenshot#12](/walkthrough-dive-in-screens/step.1.12.png)
 
 Just like that, a new class, called BaseObject get created, as you can see, next is that, methods (key value pairs, method name as the key, and function as the value) will be added on the BaseObject prototype object.
 
-[13]![screenshot#13](/screenshots/step.1.13.png)
+[13]![screenshot#13](/walkthrough-dive-in-screens/step.1.13.png)
 
 The End.
