@@ -29,7 +29,7 @@
 		- [How does the i18n files get loaded?](walkthrough-dive-in/step8.md#how-does-the-i18n-files-get-loaded)
 		- [How does the parameters get evaluated?](walkthrough-dive-in/step8.md#how-does-the-parameters-get-evaluated)
 - How does X work?
-	- [How does bindAggregation work?](screenshots/how-does-bindAggregation-work.png)
+	- [How does bindAggregation work?](walkthrough-dive-in-screens/how-does-bindAggregation-work.png)
 
 *The rest of this series (un-revised edition) can be found [here](http://scn.sap.com/people/ji.wu/content)*
 
