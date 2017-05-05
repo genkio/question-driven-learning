@@ -34,4 +34,4 @@
 *The rest of this series (un-revised edition) can be found [here](http://scn.sap.com/people/ji.wu/content)*
 
 ## AngularJS series
-> Coming soon
+> Better yet, why not to reinvent the wheel, building angular.js from scratch, checkout [jgular](https://github.com/j1wu/jgular.js) for more information.
