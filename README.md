@@ -31,7 +31,5 @@
 - How does X work?
 	- [How does bindAggregation work?](walkthrough-dive-in-screens/how-does-bindAggregation-work.png)
 
-*The rest of this series (un-revised edition) can be found [here](http://scn.sap.com/people/ji.wu/content)*
-
 ## AngularJS series
 > Better yet, why not to reinvent the wheel, building angular.js from scratch, checkout [jgular](https://github.com/j1wu/jgular.js) for more information.
